@@ -18,6 +18,11 @@
                 loadingScreen.style.display = 'none';  // Hide the element after the fade out
                 mainContent.style.display = 'block';  // Show the main content
             }, 1000);  // Match the duration of the fade-out (1 second)
+            
+            // Show Welcome Pop-up
+            setTimeout(() => {
+                alert("Welcome to BE VERSE! Enjoy browsing through Kdramas, Movies, and Anime Movies.");
+            }, 1500);
         });
     </script>
 </head>
@@ -32,9 +37,19 @@
     <!-- Main Content -->
     <div id="main-content" style="display:none;">
         <header>
-            <h1>Welcome to BE VERSE!</h1>
-            <p>Your content goes here...</p>
+            <div class="navbar">
+                <h1>BE VERSE</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#kdrama">Kdrama</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#anime-movies">Anime Movies</a></li>
+                    </ul>
+                </nav>
+                <input type="text" id="search" placeholder="Search..." oninput="searchContent()">
+            </div>
         </header>
+
         <div class="content">
             <section id="kdrama">
                 <h2>Kdrama</h2>
@@ -77,9 +92,22 @@
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
-    
+
+    <script>
+        function searchContent() {
+            const query = document.getElementById("search").value.toLowerCase();
+            const posts = document.querySelectorAll(".post");
+            posts.forEach(post => {
+                const title = post.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(query)) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
