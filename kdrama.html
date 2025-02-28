@@ -30,13 +30,18 @@
             <h2>Kdrama Catalog</h2>
 
             <div class="post">
-                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg" alt="Kdrama 1" class="post-image">
+                <img src="https://via.placeholder.com/300x200?text=Kdrama+1" alt="Kdrama 1" class="post-image">
                 <div class="post-info">
                     <h3>Title of Kdrama 1</h3>
                     <p>Release Date: 2023-05-10</p>
                     <p>Type: Drama</p>
                     <p>Actor: Actor Name</p>
                     <button class="download-button" onclick="showEpisodeModal('Title of Kdrama 1')">Download</button>
+                </div>
+                <div class="episodes" data-title="Title of Kdrama 1" style="display: none;">
+                    <button class="episode-button">Episode 1</button>
+                    <button class="episode-button">Episode 2</button>
+                    <button class="episode-button">Episode 3</button>
                 </div>
             </div>
 
@@ -49,6 +54,11 @@
                     <p>Actor: Actor Name</p>
                     <button class="download-button" onclick="showEpisodeModal('Title of Kdrama 2')">Download</button>
                 </div>
+                <div class="episodes" data-title="Title of Kdrama 2" style="display: none;">
+                    <button class="episode-button">Episode 1</button>
+                    <button class="episode-button">Episode 2</button>
+                    <button class="episode-button">Episode 3</button>
+                </div>
             </div>
         </div>
     </main>
@@ -57,18 +67,12 @@
         <p>BE VERSE © 2025</p>
     </footer>
 
-    <!-- Modal for episode selection -->
     <div id="episode-modal" class="modal">
         <div class="modal-content">
             <span id="close-modal" class="close">&times;</span>
             <h2>Select Episode to Download</h2>
             <p id="drama-title"></p>
-            <div class="episode-list">
-                <button class="episode-button">Episode 1</button>
-                <button class="episode-button">Episode 2</button>
-                <button class="episode-button">Episode 3</button>
-                <!-- Add more episodes as needed -->
-            </div>
+            <div class="episode-list" id="episode-list"></div>
         </div>
     </div>
 
