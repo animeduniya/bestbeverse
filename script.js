@@ -1,27 +1,28 @@
-// Show the popup when the page is loaded
-window.onload = function() {
-    document.getElementById("popup").classList.add("active");
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("close-popup");
 
-    // Close the popup when the button is clicked
-    document.getElementById("close-popup").onclick = function() {
-        document.getElementById("popup").classList.remove("active");
-    };
-};
+    // Show the popup after a 1-second delay
+    setTimeout(() => {
+        popup.classList.add("active");
+    }, 1000); // Show popup after 1 second
 
-// Search functionality
-document.getElementById("search").addEventListener("input", function() {
-    const searchTerm = this.value.toLowerCase();
-    const resultsContainer = document.getElementById("search-results");
+    // Close popup when the close button is clicked
+    closeBtn.addEventListener("click", () => {
+        popup.classList.remove("active");
+    });
 
-    // Simulate searching (replace with actual search logic)
-    if (searchTerm.length > 0) {
-        resultsContainer.style.display = "block";
-        resultsContainer.innerHTML = `
-            <div>Searching for: ${searchTerm}</div>
-            <div>Result 1</div>
-            <div>Result 2</div>
-        `;
-    } else {
-        resultsContainer.style.display = "none";
-    }
+    // Search functionality
+    const searchInput = document.getElementById("search");
+    const searchResults = document.getElementById("search-results");
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        if (query.length > 0) {
+            searchResults.style.display = "block";
+            searchResults.innerHTML = `Searching for: ${query}`;
+        } else {
+            searchResults.style.display = "none";
+        }
+    });
 });
