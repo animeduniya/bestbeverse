@@ -5,76 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BE VERSE</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        window.addEventListener("load", function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-            
-            // Fade out loading screen
-            loadingScreen.style.transition = 'opacity 1s ease';  
-            loadingScreen.style.opacity = 0;  
-            
-            setTimeout(function() {
-                loadingScreen.style.display = 'none';  
-                mainContent.style.display = 'block';  
-            }, 1000);
-            
-            // Show Welcome Pop-up
-            setTimeout(() => {
-                alert("Welcome to BE VERSE! Explore the best in Kdramas, Movies, and Anime Movies.");
-            }, 1500);
-        });
-    </script>
 </head>
 <body>
+    <header>
+        <div class="navbar">
+            <h1>BE VERSE</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="kdrama.html">Kdrama</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="anime-movies.html">Anime Movies</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
+    </header>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <img src="loading.gif" alt="Loading...">
-        <h2>Loading...</h2>
-    </div>
-
-    <!-- Main Content -->
-    <div id="main-content" style="display:none;">
-        <header>
-            <div class="navbar">
-                <h1>BE VERSE</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="kdrama.html">Kdrama</a></li>
-                        <li><a href="movies.html">Movies</a></li>
-                        <li><a href="anime-movies.html">Anime Movies</a></li>
-                    </ul>
-                </nav>
-                <input type="text" id="search" placeholder="Search..." oninput="searchContent()">
-            </div>
-        </header>
-
-        <div class="home-content">
-            <h2>Welcome to BE VERSE</h2>
-            <p>Explore the world of Kdramas, Movies, and Anime Movies. Your ultimate entertainment hub!</p>
-            <div class="buttons-container">
-                <a href="kdrama.html" class="explore-btn">Explore Kdrama</a>
-                <a href="movies.html" class="explore-btn">Explore Movies</a>
-                <a href="anime-movies.html" class="explore-btn">Explore Anime Movies</a>
+    <main>
+        <div class="latest-post">
+            <h2>Latest Post</h2>
+            <div class="post pop-up" id="latestPost">
+                <img src="https://example.com/path/to/your/image.jpg" alt="Post Image" class="post-image">
+                <div class="post-info">
+                    <h3>Latest Post Title</h3>
+                    <p>Release Date: 2023-05-10</p>
+                    <p>Type: Drama</p>
+                    <p>Actor: Actor Name</p>
+                    <a href="#" class="download-button">Download</a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script>
-        function searchContent() {
-            const query = document.getElementById("search").value.toLowerCase();
-            const posts = document.querySelectorAll(".post");
-            posts.forEach(post => {
-                const title = post.querySelector("h3").textContent.toLowerCase();
-                if (title.includes(query)) {
-                    post.style.display = "block";
-                } else {
-                    post.style.display = "none";
-                }
-            });
-        }
-    </script>
+    <footer>
+        <p>BE VERSE © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
