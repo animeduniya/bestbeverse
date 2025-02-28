@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | BE VERSE</title>
+    <title>BE VERSE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Welcome Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Welcome to BE VERSE!</h2>
+            <p>Your ultimate hub for Kdramas, Movies, and Anime Movies. Explore new releases, view details, and enjoy epic content!</p>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+
     <header>
         <div class="navbar">
-            <h1>BE VERSE</h1>
+            <h1 id="be-verse">BE VERSE</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,35 +33,21 @@
         </div>
     </header>
 
-    <main>
-        <div class="new-releases">
-            <h2>New Releases</h2>
-            <div class="post pop-up">
-                <img src="https://via.placeholder.com/300x200?text=New+Release+1" alt="New Release 1" class="post-image">
-                <div class="post-info">
-                    <h3>Title of New Release 1</h3>
-                    <p>Release Date: 2023-05-01</p>
-                    <p>Type: Drama</p>
-                    <p>Actor: Actor Name</p>
-                    <a href="#" class="download-button">Download</a>
-                </div>
+    <div class="container">
+        <h2>New Releases</h2>
+        <div class="posts">
+            <div class="post">
+                <img src="https://via.placeholder.com/300" alt="New Release">
+                <h3>New Movie</h3>
+                <p>Release Date: 2025-02-28</p>
+                <a href="#">See Details</a>
             </div>
-
-            <div class="post pop-up">
-                <img src="https://via.placeholder.com/300x200?text=New+Release+2" alt="New Release 2" class="post-image">
-                <div class="post-info">
-                    <h3>Title of New Release 2</h3>
-                    <p>Release Date: 2023-06-10</p>
-                    <p>Type: Action</p>
-                    <p>Actor: Actor Name</p>
-                    <a href="#" class="download-button">Download</a>
-                </div>
-            </div>
+            <!-- Add more posts here -->
         </div>
-    </main>
+    </div>
 
     <footer>
-        <p>BE VERSE © 2025</p>
+        <p>&copy; 2025 BE VERSE. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
