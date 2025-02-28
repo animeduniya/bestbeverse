@@ -1,0 +1,245 @@
+/* Resetting some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body and general page layout */
+body {
+  background: #1a1a1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Loader */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Welcome popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.popup-content h2 {
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: #ff6f61;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.popup-content button:hover {
+  background-color: #ff4d3d;
+}
+
+/* Container for the main content */
+.container {
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ff6f61;
+}
+
+#search {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #ff6f61;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+#search::placeholder {
+  color: white;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ff6f61;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff4d3d;
+}
+
+/* Page Sections */
+.page {
+  margin-bottom: 40px;
+}
+
+.page h2 {
+  font-size: 2rem;
+  color: #ff6f61;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post {
+  display: inline-block;
+  width: 250px;
+  height: 350px;
+  margin: 10px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.post img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post:hover img {
+  transform: rotate(15deg);
+}
+
+.details {
+  font-size: 1.1rem;
+  color: white;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 0 0 10px 10px;
+}
+
+.page .post:hover .details {
+  background-color: #ff6f61;
+}
+
+/* RGB Border for the website */
+.container, nav, header, section {
+  border: 5px solid;
+  border-image: linear-gradient(45deg, #ff6f61, #ff4d3d, #ff6f61, #ff4d3d);
+  border-image-slice: 1;
+  border-radius: 10px;
+}
+
+/* Search input animation */
+#search:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 111, 97, 0.7);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Page transition animation */
+.page {
+  animation: fadeInPage 0.6s ease;
+}
+
+@keyframes fadeInPage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Post image rotation */
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.post:hover img {
+  animation: rotateImage 0.6s ease-in-out;
+}
