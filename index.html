@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BE VERSE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loading">Loading...</div>
+  </div>
+
+  <div id="welcome-popup" class="popup">
+    <div class="popup-content">
+      <h2>Welcome to BE VERSE!</h2>
+      <p>Your ultimate destination for Kdrama, Movies, and Anime Movies.</p>
+      <p>Explore the catalog, enjoy endless content, and dive into a world of entertainment!</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>BE VERSE</h1>
+      <input type="text" id="search" placeholder="Search...">
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#kdrama">Kdrama</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#anime-movies">Anime Movies</a></li>
+      </ul>
+    </nav>
+
+    <section id="kdrama" class="page">
+      <h2>Kdrama</h2>
+      <div class="post" onmouseover="rotateImage(this)" onclick="openPostDetails('Kdrama')">
+        <img class="image" alt="Kdrama Image">
+        <div class="details">Kdrama Post 1</div>
+      </div>
+    </section>
+
+    <section id="movies" class="page">
+      <h2>Movies</h2>
+      <div class="post" onmouseover="rotateImage(this)" onclick="openPostDetails('Movies')">
+        <img class="image" alt="Movie Image">
+        <div class="details">Movie Post 1</div>
+      </div>
+    </section>
+
+    <section id="anime-movies" class="page">
+      <h2>Anime Movies</h2>
+      <div class="post" onmouseover="rotateImage(this)" onclick="openPostDetails('Anime Movies')">
+        <img class="image" alt="Anime Movie Image">
+        <div class="details">Anime Movie Post 1</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
