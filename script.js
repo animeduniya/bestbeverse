@@ -1,3 +1,24 @@
+// Function to show the episode selection modal
+function showEpisodeModal(dramaTitle) {
+    const modal = document.getElementById('episode-modal');
+    const titleElement = document.getElementById('drama-title');
+    titleElement.textContent = dramaTitle;
+    modal.style.display = 'block';
+}
+
+// Function to close the episode selection modal
+document.getElementById('close-modal').onclick = function() {
+    document.getElementById('episode-modal').style.display = 'none';
+}
+
+// Close the modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('episode-modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 // Debounce function to limit the rate at which search function is called
 function debounce(func, wait) {
     let timeout;
