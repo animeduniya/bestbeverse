@@ -21,7 +21,7 @@
             
             // Show Welcome Pop-up
             setTimeout(() => {
-                alert("Welcome to BE VERSE! Enjoy browsing through Kdramas, Movies, and Anime Movies.");
+                alert("Welcome to BE VERSE! Explore the best in Kdramas, Movies, and Anime Movies.");
             }, 1500);
         });
     </script>
@@ -30,7 +30,7 @@
 
     <!-- Loading Screen -->
     <div id="loading-screen">
-        <img src="https://icon-library.com/images/loading-icon-gif/loading-icon-gif-28.jpg" alt="Loading..."> <!-- Replace with your loading image -->
+        <img src="loading.gif" alt="Loading...">
         <h2>Loading...</h2>
     </div>
 
@@ -41,57 +41,22 @@
                 <h1>BE VERSE</h1>
                 <nav>
                     <ul>
-                        <li><a href="#kdrama">Kdrama</a></li>
-                        <li><a href="#movies">Movies</a></li>
-                        <li><a href="#anime-movies">Anime Movies</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="kdrama.html">Kdrama</a></li>
+                        <li><a href="movies.html">Movies</a></li>
+                        <li><a href="anime-movies.html">Anime Movies</a></li>
                     </ul>
                 </nav>
                 <input type="text" id="search" placeholder="Search..." oninput="searchContent()">
             </div>
         </header>
 
-        <div class="content">
-            <section id="kdrama">
-                <h2>Kdrama</h2>
-                <div class="post">
-                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg" alt="Kdrama" class="post-image">
-                    <div class="post-info">
-                        <h3>Kdrama Title</h3>
-                        <p>Release Date: 2023-05-10</p>
-                        <p>Type: Drama</p>
-                        <p>Actor: Actor Name</p>
-                        <a href="#" class="download-button">Download</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="movies">
-                <h2>Movies</h2>
-                <div class="post">
-                    <img src="https://th.bing.com/th/id/OIP.5hwpWeyU-VP9VCpXOnzIYAHaEE?rs=1&pid=ImgDetMain" alt="Movie" class="post-image">
-                    <div class="post-info">
-                        <h3>Movie Title</h3>
-                        <p>Release Date: 2023-06-15</p>
-                        <p>Type: Action</p>
-                        <p>Actor: Actor Name</p>
-                        <a href="#" class="download-button">Download</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="anime-movies">
-                <h2>Anime Movies</h2>
-                <div class="post">
-                    <img src="https://th.bing.com/th/id/OIP.yELB7NzaRDrHvHDjgfFWGgHaJ4?rs=1&pid=ImgDetMain" alt="Anime Movie" class="post-image">
-                    <div class="post-info">
-                        <h3>Anime Movie Title</h3>
-                        <p>Release Date: 2023-07-20</p>
-                        <p>Type: Anime</p>
-                        <p>Actor: Voice Actor</p>
-                        <a href="#" class="download-button">Download</a>
-                    </div>
-                </div>
-            </section>
+        <div class="home-content">
+            <h2>Welcome to BE VERSE</h2>
+            <p>Explore the world of Kdramas, Movies, and Anime Movies. Your ultimate entertainment hub!</p>
+            <a href="kdrama.html" class="explore-btn">Explore Kdrama</a>
+            <a href="movies.html" class="explore-btn">Explore Movies</a>
+            <a href="anime-movies.html" class="explore-btn">Explore Anime Movies</a>
         </div>
     </div>
 
