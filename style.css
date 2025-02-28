@@ -1,140 +1,114 @@
-/* General reset for margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body and overall background */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Header styling */
-header {
-    background-color: #222;
-    padding: 20px 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
     color: white;
-    text-align: center;
-    position: relative;
+    overflow-x: hidden;
 }
 
-/* Navigation styling */
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #1a1a1a, #333333);
+    padding: 20px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Title Animation */
+#be-verse {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 2s ease-in-out;
+}
+
+#be-verse:hover {
+    color: #ff3366;
+    transform: rotate(360deg);
+}
+
+/* Rotating animation every 30 seconds */
+@keyframes rotateTitle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#be-verse {
+    animation: rotateTitle 30s linear infinite;
+}
+
+/* Navbar Links */
 nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
 }
 
 nav ul li {
-    display: inline;
+    margin-right: 30px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+    color: #fff;
     font-size: 18px;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff6347;
+    color: #fff;
+    background-color: #ff3366;
 }
 
-/* Search bar styling */
-.search-container {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+/* Search Bar */
+.search-bar {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
 }
 
-.search-container input {
-    padding: 5px;
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ff3366;
+    border-radius: 25px;
+    outline: none;
     font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* BE VERSE title animation */
-#be-verse-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff6347;
-    animation: rotateTitle 30s infinite linear;
-}
-
-/* Keyframe for rotating BE VERSE title */
-@keyframes rotateTitle {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Post section */
-.post {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.post:hover {
+.search-bar input:focus {
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
     transform: scale(1.05);
 }
 
-.post img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.download-btn {
-    background-color: #ff6347;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.download-btn:hover {
-    background-color: #ff4500;
-}
-
-/* Popup styling */
+/* Popup */
 .popup {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.8);
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.3s ease, opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
 .popup.active {
@@ -143,59 +117,82 @@ nav ul li a:hover {
 }
 
 .popup-content {
-    background-color: white;
-    padding: 20px;
+    background: #222;
+    padding: 30px;
     border-radius: 10px;
-    max-width: 400px;
     text-align: center;
-    position: relative;
+    width: 70%;
+    max-width: 500px;
 }
 
-.popup .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 25px;
+.popup-content h2 {
+    margin: 0;
+    color: #ff3366;
+}
+
+.popup-content p {
+    color: white;
+}
+
+.popup-content button {
+    background-color: #ff3366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+.posts {
+    display: flex;
+    gap: 20px;
+}
+
+.post {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.post:hover img {
+    transform: scale(1.1);
+}
+
+.post a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff3366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    background-color: #222;
-    color: white;
-    padding: 10px 0;
-    margin-top: auto;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .search-container {
-        top: 70%;
-        right: 10px;
-    }
-
-    .post {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .popup-content {
-        width: 80%;
-    }
-
-    /* Responsive BE VERSE title */
-    #be-verse-title {
-        font-size: 28px;
-    }
-
-    /* Navbar for mobile */
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
+    padding: 20px;
+    background: #121212;
+    color: #777;
 }
