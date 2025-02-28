@@ -3,47 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BE VERSE - Kdramas</title>
+    <title>Kdrama | BE VERSE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="kdrama.html">Kdrama</a></li>
-                <li><a href="movies.html">Movies</a></li>
-                <li><a href="anime-movies.html">Anime Movies</a></li>
-            </ul>
-            <div class="search-container">
+        <div class="navbar">
+            <h1>BE VERSE</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="kdrama.html">Kdrama</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="anime-movies.html">Anime Movies</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
                 <input type="text" id="search" placeholder="Search...">
-                <div id="search-results"></div>
             </div>
-        </nav>
-        <h1 id="be-verse-title">BE VERSE</h1>
+        </div>
     </header>
 
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span id="close-popup" class="close-btn">&times;</span>
-            <h2>Welcome to BE VERSE</h2>
-            <p>Your ultimate catalog for Kdramas, Movies, and Anime Movies. Enjoy endless content!</p>
-        </div>
-    </div>
-
     <main>
-        <h2>Latest Kdrama Releases</h2>
-        <section class="post">
-            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg" alt="Kdrama Image">
-            <h3>New Kdrama Release</h3>
-            <p>Release Date: 2023-12-25</p>
-            <p>Actor: John Doe, Jane Smith</p>
-            <a href="#" class="download-btn">Download</a>
-        </section>
+        <div class="category-content">
+            <h2>Kdrama Catalog</h2>
+
+            <div class="post pop-up">
+                <img src="https://via.placeholder.com/300x200?text=Kdrama+1" alt="Kdrama 1" class="post-image">
+                <div class="post-info">
+                    <h3>Title of Kdrama 1</h3>
+                    <p>Release Date: 2023-05-10</p>
+                    <p>Type: Drama</p>
+                    <p>Actor: Actor Name</p>
+                    <a href="#" class="download-button">Download</a>
+                </div>
+            </div>
+
+            <div class="post pop-up">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg" alt="Kdrama 2" class="post-image">
+                <div class="post-info">
+                    <h3>Title of Kdrama 2</h3>
+                    <p>Release Date: 2023-06-15</p>
+                    <p>Type: Romance</p>
+                    <p>Actor: Actor Name</p>
+                    <a href="#" class="download-button">Download</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 BE VERSE. All rights reserved.</p>
+        <p>BE VERSE © 2025</p>
     </footer>
 
     <script src="script.js"></script>
