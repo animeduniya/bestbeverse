@@ -48,6 +48,8 @@ body {
 .home-content h2 {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .home-content p {
@@ -55,21 +57,29 @@ body {
     margin-bottom: 30px;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .explore-btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #ff5733;
+    background-color: rgb(255, 87, 51);
     color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
     border-radius: 10px;
     margin: 10px;
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .explore-btn:hover {
     transform: scale(1.1);
-    background-color: #ff3300;
+    background-color: rgb(255, 51, 0);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Navbar */
@@ -79,10 +89,15 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar h1 {
     font-size: 2rem;
+    color: rgb(255, 87, 51);
 }
 
 .navbar nav ul {
@@ -99,17 +114,35 @@ body {
 }
 
 .navbar nav ul li a:hover {
-    color: #ff5733;
+    color: rgb(255, 87, 51);
 }
 
-/* Post Styling */
-.category-content .post {
+#search {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid rgb(255, 87, 51);
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+#search:focus {
+    outline: none;
+    border-color: rgb(255, 51, 0);
+}
+
+/* Catalog Pop-up Style */
+.category-content .pop-up {
     display: flex;
-    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
     transition: transform 0.3s ease;
 }
 
-.category-content .post:hover {
+.category-content .pop-up:hover {
     transform: scale(1.05);
 }
 
@@ -121,41 +154,21 @@ body {
     margin-right: 20px;
 }
 
-.post-info {
-    max-width: 500px;
-}
-
 .post-info h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-.post-info p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
 .download-button {
     padding: 10px 20px;
-    background-color: #ff5733;
+    background-color: rgb(255, 87, 51);
     color: #fff;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
     transition: background-color 0.3s ease;
 }
 
 .download-button:hover {
-    background-color: #ff3300;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    background-color: rgb(255, 51, 0);
 }
