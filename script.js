@@ -1,13 +1,12 @@
-// JavaScript for Dynamic Search
-const searchInput = document.getElementById('searchInput');
-const posts = document.querySelectorAll('.post');
+// Search functionality
+document.getElementById('search').addEventListener('input', function () {
+    const searchValue = this.value.toLowerCase();
+    const posts = document.querySelectorAll('.post');
 
-searchInput.addEventListener('input', function() {
-    const searchQuery = searchInput.value.toLowerCase();
     posts.forEach(post => {
-        const title = post.querySelector('h3').textContent.toLowerCase();
-        if (title.includes(searchQuery)) {
-            post.style.display = 'block';
+        const title = post.querySelector('h3').innerText.toLowerCase();
+        if (title.includes(searchValue)) {
+            post.style.display = 'inline-block';
         } else {
             post.style.display = 'none';
         }
