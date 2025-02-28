@@ -11,7 +11,11 @@ function showEpisodeModal(dramaTitle) {
     // Get the episodes for the selected drama
     const episodes = document.querySelector(`.episodes[data-title="${dramaTitle}"]`).children;
     for (const episode of episodes) {
-        episodeList.appendChild(episode.cloneNode(true));
+        const button = episode.cloneNode(true);
+        button.addEventListener('click', () => {
+            alert(`Downloading ${button.textContent} of ${dramaTitle}`);
+        });
+        episodeList.appendChild(button);
     }
 
     modal.style.display = 'block';
