@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kdrama | BE VERSE</title>
+    <title>Kdramas - BE VERSE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Include the same popup and header from index.html -->
+
     <header>
         <div class="navbar">
-            <h1>BE VERSE</h1>
+            <h1 id="be-verse">BE VERSE</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,36 +26,21 @@
         </div>
     </header>
 
-    <main>
-        <div class="category-content">
-            <h2>Kdrama Catalog</h2>
-
-            <div class="post pop-up">
-                <img src="https://via.placeholder.com/300x200?text=Kdrama+1" alt="Kdrama 1" class="post-image">
-                <div class="post-info">
-                    <h3>Title of Kdrama 1</h3>
-                    <p>Release Date: 2023-05-10</p>
-                    <p>Type: Drama</p>
-                    <p>Actor: Actor Name</p>
-                    <a href="#" class="download-button">Download</a>
-                </div>
+    <div class="container">
+        <h2>Kdramas</h2>
+        <div class="posts">
+            <div class="post">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg" alt="Kdrama">
+                <h3>Kdrama Title</h3>
+                <p>Release Date: 2025-02-28</p>
+                <a href="#">See Details</a>
             </div>
-
-            <div class="post pop-up">
-                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg" alt="Kdrama 2" class="post-image">
-                <div class="post-info">
-                    <h3>Title of Kdrama 2</h3>
-                    <p>Release Date: 2023-06-15</p>
-                    <p>Type: Romance</p>
-                    <p>Actor: Actor Name</p>
-                    <a href="#" class="download-button">Download</a>
-                </div>
-            </div>
+            <!-- Add more Kdrama posts here -->
         </div>
-    </main>
+    </div>
 
     <footer>
-        <p>BE VERSE © 2025</p>
+        <p>&copy; 2025 BE VERSE. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
