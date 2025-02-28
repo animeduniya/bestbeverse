@@ -47,7 +47,7 @@ function setPostImage(post, imageUrl) {
 // Example: Set images using external URLs (you can replace these with your own links)
 document.addEventListener("DOMContentLoaded", function() {
   // Replace with actual URLs for Kdrama, Movies, Anime Movies
-  setPostImage(document.querySelector('#kdrama .post'), 'https://example.com/kdrama1.jpg');
-  setPostImage(document.querySelector('#movies .post'), 'https://example.com/movie1.jpg');
-  setPostImage(document.querySelector('#anime-movies .post'), 'https://example.com/anime1.jpg');
+  setPostImage(document.querySelector('#kdrama .post'), 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678549895i/91294861.jpg');
+  setPostImage(document.querySelector('#movies .post'), 'https://th.bing.com/th/id/OIP.5hwpWeyU-VP9VCpXOnzIYAHaEE?rs=1&pid=ImgDetMain');
+  setPostImage(document.querySelector('#anime-movies .post'), 'https://th.bing.com/th/id/OIP.yELB7NzaRDrHvHDjgfFWGgHaJ4?rs=1&pid=ImgDetMain');
 });
