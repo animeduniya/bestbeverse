@@ -2,7 +2,18 @@
 function showEpisodeModal(dramaTitle) {
     const modal = document.getElementById('episode-modal');
     const titleElement = document.getElementById('drama-title');
+    const episodeList = document.getElementById('episode-list');
     titleElement.textContent = dramaTitle;
+
+    // Clear previous episodes
+    episodeList.innerHTML = '';
+
+    // Get the episodes for the selected drama
+    const episodes = document.querySelector(`.episodes[data-title="${dramaTitle}"]`).children;
+    for (const episode of episodes) {
+        episodeList.appendChild(episode.cloneNode(true));
+    }
+
     modal.style.display = 'block';
 }
 
