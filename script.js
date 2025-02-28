@@ -1,6 +1,9 @@
-// Show the popup when the page is loaded
+// Show the popup only on the homepage and only on first visit or reload
 window.onload = function() {
-    document.getElementById("popup").classList.add("active");
+    if (window.location.pathname === "/index.html" && !localStorage.getItem("popupShown")) {
+        document.getElementById("popup").classList.add("active");
+        localStorage.setItem("popupShown", "true");
+    }
 
     // Close the popup when the button is clicked
     document.getElementById("close-popup").onclick = function() {
