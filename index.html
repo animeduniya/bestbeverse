@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BE VERSE</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BE VERSE</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // This script hides the loading screen after the page is loaded
+        window.addEventListener("load", function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.transition = 'opacity 1s ease';  // Apply transition
+            loadingScreen.style.opacity = 0;  // Start fading out
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';  // Hide the element after the fade out
+            }, 1000);  // Match the duration of the fade-out (1 second)
+        });
+    </script>
 </head>
 <body>
-  <div class="loader-container">
-    <div class="loading">Loading...</div>
-  </div>
 
-  <div id="welcome-popup" class="popup">
-    <div class="popup-content">
-      <h2>Welcome to BE VERSE!</h2>
-      <p>Your ultimate destination for Kdrama, Movies, and Anime Movies.</p>
-      <p>Explore the catalog, enjoy endless content, and dive into a world of entertainment!</p>
-      <button onclick="closePopup()">Close</button>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="loading.gif" alt="Loading..."> <!-- Replace with your loading image -->
+        <h2>Loading...</h2>
     </div>
-  </div>
 
-  <div class="container">
-    <header>
-      <h1>BE VERSE</h1>
-      <input type="text" id="search" placeholder="Search...">
-    </header>
+    <!-- Main Content -->
+    <div id="main-content" style="display:none;">
+        <header>
+            <h1>Welcome to BE VERSE!</h1>
+            <p>Your content goes here...</p>
+        </header>
+        <div class="content">
+            <section id="kdrama">
+                <h2>Kdrama</h2>
+                <div class="post">
+                    <img src="kdrama1.jpg" alt="Kdrama" class="post-image">
+                    <div class="post-info">
+                        <h3>Kdrama Title</h3>
+                        <p>Release Date: 2023-05-10</p>
+                        <p>Type: Drama</p>
+                        <p>Actor: Actor Name</p>
+                        <a href="#" class="download-button">Download</a>
+                    </div>
+                </div>
+            </section>
 
-    <nav>
-      <ul>
-        <li><a href="#kdrama">Kdrama</a></li>
-        <li><a href="#movies">Movies</a></li>
-        <li><a href="#anime-movies">Anime Movies</a></li>
-      </ul>
-    </nav>
+            <section id="movies">
+                <h2>Movies</h2>
+                <div class="post">
+                    <img src="movie1.jpg" alt="Movie" class="post-image">
+                    <div class="post-info">
+                        <h3>Movie Title</h3>
+                        <p>Release Date: 2023-06-15</p>
+                        <p>Type: Action</p>
+                        <p>Actor: Actor Name</p>
+                        <a href="#" class="download-button">Download</a>
+                    </div>
+                </div>
+            </section>
 
-    <section id="kdrama" class="page">
-      <h2>Kdrama</h2>
-      <div class="post" onmouseover="rotateImage(this)" onclick="openPostDetails('Kdrama')">
-        <img class="image" alt="Kdrama Image">
-        <div class="details">Kdrama Post 1</div>
-      </div>
-    </section>
+            <section id="anime-movies">
+                <h2>Anime Movies</h2>
+                <div class="post">
+                    <img src="anime1.jpg" alt="Anime Movie" class="post-image">
+                    <div class="post-info">
+                        <h3>Anime Movie Title</h3>
+                        <p>Release Date: 2023-07-20</p>
+                        <p>Type: Anime</p>
+                        <p>Actor: Voice Actor</p>
+                        <a href="#" class="download-button">Download</a>
+                    </div>
+                </div>
+            </section>
 
-    <section id="movies" class="page">
-      <h2>Movies</h2>
-      <div class="post" onmouseover="rotateImage(this)" onclick="openPostDetails('Movies')">
-        <img class="image" alt="Movie Image">
-        <div class="details">Movie Post 1</div>
-      </div>
-    </section>
-
-    <section id="anime-movies" class="page">
-      <h2>Anime Movies</h2>
-      <div class="post" onmouseover="rotateImage(this)" onclick="openPostDetails('Anime Movies')">
-        <img class="image" alt="Anime Movie Image">
-        <div class="details">Anime Movie Post 1</div>
-      </div>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
+        </div>
+    </div>
+    
 </body>
 </html>
