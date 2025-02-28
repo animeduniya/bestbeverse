@@ -1,142 +1,160 @@
-/* General Styles */
+/* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #111;
-    color: white;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #1e1e1e;
+    color: white;
 }
 
-header {
-    background-color: #222;
-    padding: 20px 10px;
+h1, h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .navbar h1 {
-    font-size: 2em;
     color: #fff;
-    letter-spacing: 1px;
+    font-size: 24px;
 }
 
-.navbar ul {
+.navbar nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
-.navbar ul li {
+.navbar nav ul li {
     display: inline;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
-.navbar ul li a {
-    text-decoration: none;
+.navbar nav ul li a {
     color: #fff;
-    font-size: 1.2em;
+    text-decoration: none;
+    font-size: 18px;
     transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    color: #ff4d4d;
+.navbar nav ul li a:hover {
+    color: #ff6347;
 }
 
+/* Search Bar */
 .search-bar {
-    margin-top: 20px;
-    text-align: center;
+    position: relative;
 }
 
 .search-bar input {
-    width: 50%;
     padding: 10px;
-    font-size: 1.2em;
-    border: 2px solid #fff;
+    border-radius: 5px;
+    border: 2px solid #ff6347;
     background-color: transparent;
     color: white;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    font-size: 16px;
 }
 
-.search-bar input:focus {
-    outline: none;
-    border-color: #ff4d4d;
+.search-bar input::placeholder {
+    color: #fff;
 }
 
-/* Latest Post Section */
-.latest-post {
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.new-releases h2, .category-content h2 {
+    font-size: 28px;
     text-align: center;
-    margin-top: 50px;
-}
-
-.latest-post h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .post {
     display: inline-block;
+    width: 300px;
     margin: 20px;
-    padding: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: #333;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
 .post:hover {
-    transform: rotate(5deg);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
 }
 
 .post-image {
     width: 100%;
-    max-height: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
 }
 
 .post-info {
-    text-align: left;
-    margin-top: 15px;
+    padding: 15px;
 }
 
 .post-info h3 {
-    font-size: 1.8em;
-    color: #ff4d4d;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.post-info p {
+    margin: 5px 0;
 }
 
 .download-button {
     display: inline-block;
-    margin-top: 10px;
+    background-color: #ff6347;
     padding: 10px 20px;
-    background-color: #ff4d4d;
+    border-radius: 5px;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .download-button:hover {
-    background-color: #ff1a1a;
+    background-color: #ff4500;
+}
+
+/* Animations */
+.pop-up {
+    animation: popUpAnimation 0.5s ease-out;
+}
+
+@keyframes popUpAnimation {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Footer */
 footer {
+    background-color: #333;
     text-align: center;
-    background-color: #222;
-    padding: 20px;
-    font-size: 1em;
-    color: #aaa;
+    padding: 10px;
+    color: #fff;
 }
 
-/* Search Function - Making it Dynamic */
-.search-bar input {
-    width: 60%;
+/* RGB Border Animation */
+body {
+    animation: rgbBorder 5s linear infinite;
 }
 
-.search-bar input:focus {
-    outline: none;
-    border: 2px solid #ff4d4d;
+@keyframes rgbBorder {
+    0% {
+        border-color: red;
+    }
+    33% {
+        border-color: green;
+    }
+    66% {
+        border-color: blue;
+    }
+    100% {
+        border-color: red;
+    }
 }
