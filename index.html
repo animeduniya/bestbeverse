@@ -11,13 +11,13 @@
             const mainContent = document.getElementById('main-content');
             
             // Fade out loading screen
-            loadingScreen.style.transition = 'opacity 1s ease';  // Apply transition
-            loadingScreen.style.opacity = 0;  // Start fading out
+            loadingScreen.style.transition = 'opacity 1s ease';  
+            loadingScreen.style.opacity = 0;  
             
             setTimeout(function() {
-                loadingScreen.style.display = 'none';  // Hide the element after the fade out
-                mainContent.style.display = 'block';  // Show the main content
-            }, 1000);  // Match the duration of the fade-out (1 second)
+                loadingScreen.style.display = 'none';  
+                mainContent.style.display = 'block';  
+            }, 1000);
             
             // Show Welcome Pop-up
             setTimeout(() => {
@@ -54,9 +54,11 @@
         <div class="home-content">
             <h2>Welcome to BE VERSE</h2>
             <p>Explore the world of Kdramas, Movies, and Anime Movies. Your ultimate entertainment hub!</p>
-            <a href="kdrama.html" class="explore-btn">Explore Kdrama</a>
-            <a href="movies.html" class="explore-btn">Explore Movies</a>
-            <a href="anime-movies.html" class="explore-btn">Explore Anime Movies</a>
+            <div class="buttons-container">
+                <a href="kdrama.html" class="explore-btn">Explore Kdrama</a>
+                <a href="movies.html" class="explore-btn">Explore Movies</a>
+                <a href="anime-movies.html" class="explore-btn">Explore Anime Movies</a>
+            </div>
         </div>
     </div>
 
