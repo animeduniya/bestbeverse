@@ -1,14 +1,9 @@
-// Search functionality
-document.getElementById('search').addEventListener('input', function () {
-    const searchValue = this.value.toLowerCase();
-    const posts = document.querySelectorAll('.post');
+// Show the popup when the page is loaded
+window.onload = function() {
+    document.getElementById("popup").classList.add("active");
 
-    posts.forEach(post => {
-        const title = post.querySelector('h3').innerText.toLowerCase();
-        if (title.includes(searchValue)) {
-            post.style.display = 'inline-block';
-        } else {
-            post.style.display = 'none';
-        }
-    });
-});
+    // Close the popup when the button is clicked
+    document.getElementById("close-popup").onclick = function() {
+        document.getElementById("popup").classList.remove("active");
+    };
+};
