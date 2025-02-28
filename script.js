@@ -13,7 +13,7 @@ function showEpisodeModal(dramaTitle) {
     for (const episode of episodes) {
         const button = episode.cloneNode(true);
         button.addEventListener('click', () => {
-            alert(`Downloading ${button.textContent} of ${dramaTitle}`);
+            window.location.href = button.dataset.link;
         });
         episodeList.appendChild(button);
     }
