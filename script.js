@@ -19,11 +19,11 @@ document.getElementById("search").addEventListener("input", function() {
 // Popup on homepage and only on first load or reload
 if (window.location.pathname === "/index.html" && !localStorage.getItem("popupShown")) {
     window.onload = function() {
-        document.getElementById("popup").classList.add("active");
+        document.getElementById("popup").style.display = "block";
 
         // Close the popup when the button is clicked
         document.getElementById("close-popup").onclick = function() {
-            document.getElementById("popup").classList.remove("active");
+            document.getElementById("popup").style.display = "none";
             localStorage.setItem("popupShown", "true");
         };
     };
